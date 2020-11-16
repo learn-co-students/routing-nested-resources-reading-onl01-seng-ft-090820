@@ -2033,3 +2033,267 @@ ActionController::RoutingError (No route matches [GET] "/authors/1/posts"):
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/scottcreynolds/.rvm/gems/ruby-2.1.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (33.3ms)
+Started GET "/" for 127.0.0.1 at 2020-11-16 10:16:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (111.9ms)
+Completed 200 OK in 1164ms (Views: 1114.2ms | ActiveRecord: 2.2ms)
+
+
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 2]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 3]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 2]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 3]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stephen King"], ["genre", "Romance"], ["bio", "Writes a lot of scary things."], ["created_at", "2020-11-16 15:17:27.096217"], ["updated_at", "2020-11-16 15:17:27.096217"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ariana Huffington"], ["genre", "Comedy"], ["bio", "Up and comer. One to watch."], ["created_at", "2020-11-16 15:17:27.104417"], ["updated_at", "2020-11-16 15:17:27.104417"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Horse Ebooks"], ["genre", "?????"], ["bio", "Eclectic."], ["created_at", "2020-11-16 15:17:27.112037"], ["updated_at", "2020-11-16 15:17:27.112037"]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Something About Democrats"], ["description", "  Last night I dreamt there is more to life than to bully friends.\n  What has that got to do with Democrats, you probably wonder...\n  The answer is here. Right here. Back in school my hair was silly.\n  Nevermind about the details, but... In a nut-shell: And still,\n  it was strange. Using Google, I found a 12-sided dice.\n  Which would be nothing special but...\n"], ["created_at", "2020-11-16 15:17:27.130309"], ["updated_at", "2020-11-16 15:17:27.130309"], ["author_id", 4]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Spam Spam Spam"], ["description", "  It occurred to me that no matter what cards you are dealt,\n  you need to enjoy the small joys. How is this related to Spam, you ask.\n  Fair enough. OK, I will tell you something here now...\n  Sometime around last year I loved movies. Yeah, just what it sounds like.\n  In a nut-shell: And still, it was strange. I collided with the powers of a my computer,\n  broken and gray. And here's why this matters...\n"], ["created_at", "2020-11-16 15:17:27.137956"], ["updated_at", "2020-11-16 15:17:27.137956"], ["author_id", 5]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Links! Click Links!"], ["description", "  Last night I dreamt we simply need to realize to be so competitive.\n  Does the responsibility lie with Links, you probably wonder...\n  The answer is here. Right here. About the time I broke up with my\n  ex I was totally into music. Whatever. So that's that.\n  But something wasn't right. I stumbled upon a giant banana.\n"], ["created_at", "2020-11-16 15:17:27.146468"], ["updated_at", "2020-11-16 15:17:27.146468"], ["author_id", 6]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2020-11-15 00:00:00"], ["updated_at", "2020-11-16 15:17:27.154073"], ["id", 6]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2020-11-16 10:18:21 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 62ms (Views: 55.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/authors/1/posts" for 127.0.0.1 at 2020-11-16 10:18:57 -0500
+Processing by AuthorsController#posts_index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=1):
+  
+app/controllers/authors_controller.rb:8:in `posts_index'
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.2ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (141.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_csdj____rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___533006298399244928_70094179510400 at /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (119.7ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (228.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+Started GET "/authors/1/posts" for 127.0.0.1 at 2020-11-16 10:20:12 -0500
+Processing by AuthorsController#posts_index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Author with 'id'=1):
+  
+app/controllers/authors_controller.rb:8:in `posts_index'
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_csdj____rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___533006298399244928_70368613377560 at /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.4ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (128.7ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 4]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 5]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 6]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 4]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.3ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 5]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "authors" WHERE "authors"."id" = ?[0m  [["id", 6]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Stephen King"], ["genre", "Romance"], ["bio", "Writes a lot of scary things."], ["created_at", "2020-11-16 15:20:13.435574"], ["updated_at", "2020-11-16 15:20:13.435574"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ariana Huffington"], ["genre", "Comedy"], ["bio", "Up and comer. One to watch."], ["created_at", "2020-11-16 15:20:13.443873"], ["updated_at", "2020-11-16 15:20:13.443873"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "authors" ("name", "genre", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Horse Ebooks"], ["genre", "?????"], ["bio", "Eclectic."], ["created_at", "2020-11-16 15:20:13.451636"], ["updated_at", "2020-11-16 15:20:13.451636"]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Something About Democrats"], ["description", "  Last night I dreamt there is more to life than to bully friends.\n  What has that got to do with Democrats, you probably wonder...\n  The answer is here. Right here. Back in school my hair was silly.\n  Nevermind about the details, but... In a nut-shell: And still,\n  it was strange. Using Google, I found a 12-sided dice.\n  Which would be nothing special but...\n"], ["created_at", "2020-11-16 15:20:13.471921"], ["updated_at", "2020-11-16 15:20:13.471921"], ["author_id", 7]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Spam Spam Spam"], ["description", "  It occurred to me that no matter what cards you are dealt,\n  you need to enjoy the small joys. How is this related to Spam, you ask.\n  Fair enough. OK, I will tell you something here now...\n  Sometime around last year I loved movies. Yeah, just what it sounds like.\n  In a nut-shell: And still, it was strange. I collided with the powers of a my computer,\n  broken and gray. And here's why this matters...\n"], ["created_at", "2020-11-16 15:20:13.480174"], ["updated_at", "2020-11-16 15:20:13.480174"], ["author_id", 8]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Links! Click Links!"], ["description", "  Last night I dreamt we simply need to realize to be so competitive.\n  Does the responsibility lie with Links, you probably wonder...\n  The answer is here. Right here. About the time I broke up with my\n  ex I was totally into music. Whatever. So that's that.\n  But something wasn't right. I stumbled upon a giant banana.\n"], ["created_at", "2020-11-16 15:20:13.488259"], ["updated_at", "2020-11-16 15:20:13.488259"], ["author_id", 9]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "posts" SET "created_at" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["created_at", "2020-11-15 00:00:00"], ["updated_at", "2020-11-16 15:20:13.496281"], ["id", 9]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAuthor Load (3.8ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+Started GET "/authors/8/posts" for 127.0.0.1 at 2020-11-16 10:20:53 -0500
+Processing by AuthorsController#posts_index as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 8]]
+  Rendered posts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 61ms (Views: 18.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-11-16 10:29:58 -0500
+Processing by Rails::InfoController#routes as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [11 times] (6.7ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (50.0ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (88.7ms)
+Completed 200 OK in 113ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-11-16 10:34:56 -0500
+  
+SyntaxError (/mnt/c/users/csdj9/dev/flatiron/labs/routing-nested-resources-reading-onl01-seng-ft-090820/app/controllers/posts_controller.rb:39: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:39: syntax error, unexpected end-of-input, expecting end
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from __home_csdj____rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___533006298399244928_70094178544940 at /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (54.4ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendering /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/csdj92/.rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (124.8ms)
+Started GET "/posts" for 127.0.0.1 at 2020-11-16 10:35:22 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 42ms (Views: 33.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/authors/7/posts" for 127.0.0.1 at 2020-11-16 10:35:24 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"author_id"=>"7"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 7]]
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/authors/9/posts" for 127.0.0.1 at 2020-11-16 10:35:26 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"author_id"=>"9"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 9]]
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
